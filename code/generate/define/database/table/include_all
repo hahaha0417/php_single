@@ -1,0 +1,14 @@
+/*
+
+use hahaha\define\accounts as accounts;
+use hahaha\define\products_sign_up as products_sign_up;
+use hahaha\define\projects as projects;
+use hahaha\define\products as products;
+
+
+use hahaha\define\accounts as define_accounts;
+use hahaha\define\products_sign_up as define_products_sign_up;
+use hahaha\define\projects as define_projects;
+use hahaha\define\products as define_products;
+
+*/
