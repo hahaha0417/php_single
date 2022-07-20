@@ -13,7 +13,7 @@ cd ..
 # --------------------------------------------
 # php_hahahalib_hard_license
 # --------------------------------------------
-cd ../git/php_hahahalib_hard_license
+cd ../git/hahahalib_hard_license
 ./'git pull.sh'
 cd ..
 # --------------------------------------------
@@ -21,7 +21,7 @@ cd ..
 # --------------------------------------------
 # php_hahahalib_hard_license
 # --------------------------------------------
-cd ../git/php_hahahalib_very_hard_license
+cd ../git/hahahalib_very_hard_license
 ./'git pull.sh'
 cd ..
 # --------------------------------------------
