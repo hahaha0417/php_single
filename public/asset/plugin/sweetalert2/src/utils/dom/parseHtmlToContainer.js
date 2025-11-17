@@ -39,7 +39,7 @@ const handleObject = (param, target) => {
 
 /**
  * @param {HTMLElement} target
- * @param {HTMLElement} elem
+ * @param {object} elem
  */
 const handleJqueryElem = (target, elem) => {
   target.textContent = ''

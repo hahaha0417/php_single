@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-Hant">
+    <head>
+        
+
+                <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>hahaha官網 - 後台</title>
+
+
+
+
+
+
+        <link rel="stylesheet" href="/asset/plugin//bootstrap/dist/css/bootstrap.css?v=1.0.0" type="text/css" /><link rel="stylesheet" href="/asset/plugin//sweetalert2/dist/sweetalert2.css?v=1.0.0" type="text/css" />        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        
+<link rel="stylesheet" href="/asset/plugin//datatables.net-bs5/css/dataTables.bootstrap5.min.css?v=1.0.0" type="text/css" /><link rel="stylesheet" href="/asset/plugin//datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css?v=1.0.0" type="text/css" /><link rel="stylesheet" href="/asset/backend/css/base.css?v=1.0.0" type="text/css" /><link rel="stylesheet" href="/asset/backend/css/custom.css?v=1.0.0" type="text/css" /><link rel="stylesheet" href="/asset/backend/css/hahaha.css?v=1.0.0" type="text/css" />        <script type="text/javascript" src="/asset/plugin//jquery/dist/jquery.js?v=1.0.0"\>\</script><script type="text/javascript" src="/asset/plugin//bootstrap/dist/js/bootstrap.bundle.js?v=1.0.0"\>\</script><script type="text/javascript" src="/asset/plugin//sweetalert2/dist/sweetalert2.js?v=1.0.0"\>\</script><script type="text/javascript" src="/asset/plugin//datatables.net/js/jquery.dataTables.min.js?v=1.0.0"\>\</script><script type="text/javascript" src="/asset/plugin//datatables.net-bs5/js/dataTables.bootstrap5.min.js?v=1.0.0"\>\</script><script type="text/javascript" src="/asset/plugin//datatables.net-responsive/js/dataTables.responsive.min.js?v=1.0.0"\>\</script><script type="text/javascript" src="/asset/plugin//datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js?v=1.0.0"\>\</script>        
+    </head>
+    <body class="bg-dark text-light">
+        <!-- 後台 NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow">
+    <div class="container-fluid">
+
+        <!-- LOGO + 標題 -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="/image/iTW_icon.png" alt="Logo"
+                 class="me-2" style="height:32px; width:auto;">
+            <span class="fw-semibold">後台管理系統</span>
+        </a>
+
+        <!-- 漢堡按鈕 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 展開區 -->
+        <div class="collapse navbar-collapse" id="adminNavbar">
+
+            <!-- 左側選單 -->
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" href="#">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">訂單管理</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        會員管理
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#">會員列表</a></li>
+                        <li><a class="dropdown-item" href="#">黑名單</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">匯出報表</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">商品管理</a>
+                </li> -->
+
+            </ul>
+
+            <!-- 搜尋 -->
+            <!-- <form class="d-flex me-3" role="search">
+                <input class="form-control form-control-sm bg-dark text-light border-secondary"
+                       type="search" placeholder="搜尋…" style="width:140px;">
+            </form> -->
+
+            <!-- 管理員 -->
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link " href="/backend/login" >
+                        登入
+                    </a>
+                  
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        hahaha
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#">個人資料</a></li>
+                        <li><a class="dropdown-item" href="#">修改密碼</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">登出</a></li>
+                    </ul>
+                </li> -->
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+        
+        
+        <!-- Hero -->
+            <div class="layout">
+        <!-- 🔻 左側 Sidebar -->
+<div id="sidebar">
+    <!-- ⭐ Sidebar Toggle -->
+    <a class="nav-link" id="sidebarToggle">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+    <!-- 第一層 -->
+    <a class="nav-link menu-toggle">
+        <i class="fa-solid fa-box"></i>
+        <span class="text">備份</span>
+        <i class="menu-arrow fa-solid fa-chevron-right"></i>
+    </a>
+    <div class="submenu">
+
+        <!-- 第二層 -->
+        <a class="nav-link" href="/backend/backup">
+            <i class="fa-solid fa-list"></i>
+            <span class="text">基本</span>
+        </a>
+
+    </div>
+
+</div>
+
+
+
+        <div class="content">
+        </div>
+    </div>
+
+        <footer class="bg-dark text-light py-3 fixed-bottom">
+    <div class="container d-flex justify-content-between align-items-center">
+        <span>© 2025 hahaha Company</span>
+
+        <div>
+            <a href="#" class="text-light me-3 text-decoration-none">隱私權</a>
+            <a href="#" class="text-light me-3 text-decoration-none">使用條款</a>
+
+            <a href="#" class="text-light me-2">
+                <i class="fa-brands fa-facebook fs-5"></i>
+            </a>
+            <a href="#" class="text-light me-2">
+                <i class="fa-brands fa-instagram fs-5"></i>
+            </a>
+            <a href="#" class="text-light">
+                <i class="fa-brands fa-youtube fs-5"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+        
+        
+        <script type="text/javascript" src="/asset/backend/js/base.js?v=1.0.0"\>\</script><script type="text/javascript" src="/asset/backend/js/custom.js?v=1.0.0"\>\</script><script type="text/javascript" src="/asset/backend/js/hahaha.js?v=1.0.0"\>\</script>    </body>
+</html>

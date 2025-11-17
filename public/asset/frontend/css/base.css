@@ -1,0 +1,694 @@
+
+
+/* 基本字型 */
+#hahaha-header * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+                 "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+
+/* 上層 Topbar */
+.hahaha-topbar {
+    height: 40px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #aaa;
+    font-size: 13px;
+}
+.hahaha-top-btn {
+    color: #181818;
+    text-decoration: none;
+}
+.hahaha-top-btn:hover { color:#fff; }
+
+.hahaha-top-logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.hahaha-top-logo img { height: 20px; }
+.hahaha-top-logo .hover-img {
+    position:absolute; inset:0;
+    opacity:0; transition:.15s;
+}
+.hahaha-top-logo:hover .hover-img { opacity:1; }
+
+/* Logo */
+.hahaha-main-logo {
+    display:flex;
+    align-items:center;
+    height:26px;
+}
+.hahaha-logo-text {
+    width:72px; height:20px;
+    background-image:url("https://www.hahaha.com/media/Odin/images/header/hahaha_normal.svg");
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.hahaha-logo-text:hover {
+    background-image:url("https://www.hahaha.com/media/Odin/images/header/hahaha_hover.svg");
+}
+
+/* Navbar */
+.hahaha-navbar {
+    border-bottom:1px solid #666666;
+}
+.hahaha-main-nav .nav-link {
+    padding:0.75rem 0.8rem;
+    font-size:14px;
+    color:#aaa !important;
+    border-bottom:2px solid transparent;
+}
+.hahaha-main-nav .nav-link:hover {
+    color:#fff !important;
+    border-bottom-color:#fff;
+}
+
+/* Mega menu 基本 */
+.dropdown-mega .dropdown-menu {
+    width:100%;
+    left:0;
+    right:0;
+    border-radius:0;
+    border:none;
+    box-shadow:0 8px 24px rgba(0,0,0,.15);
+    margin-top:0;
+    background-color: #666;
+    color: #eeeeee
+}
+.hahaha-megamenu .row > [class^="col-"] {
+    border-right:1px solid #eee;
+}
+.hahaha-megamenu .row > [class^="col-"]:last-child {
+    border-right:none;
+}
+
+.hahaha-menu-title {
+    font-size:13px;
+    font-weight:600;
+    color:#fff;
+    margin-bottom:.5rem;
+    text-transform:uppercase;
+}
+.hahaha-menu-item {
+    display:block;
+    padding:.2rem 0;
+    font-size:14px;
+    color:#eeeeee;
+    text-decoration:none;
+}
+.hahaha-menu-item:hover {
+    color:#006ce1;
+}
+
+/* 右側商品 */
+.hahaha-menu-product img {
+    width:100%;
+    border-radius:4px;
+}
+.hahaha-menu-product-title {
+    font-size:13px;
+    font-weight:600;
+    margin-top:.4rem;
+    line-height:1.4;
+}
+
+/* 搜尋列 */
+.hahaha-search-bar {
+    display:none;
+    background:#fff;
+    border-bottom:1px solid #e0e0e0;
+}
+.hahaha-search-btn {
+    background:#006ce1;
+    color:#fff;
+}
+
+/* Icon 按鈕 */
+.hahaha-icon-btn {
+    border:0;
+    background:transparent;
+    font-size:18px;
+    color:#181818;
+}
+.hahaha-icon-btn:hover { color:#006ce1; }
+
+/* Desktop hover 行為 */
+@media (min-width: 992px) {
+    .dropdown-mega:hover > .dropdown-menu {
+        display:block;
+    }
+}
+
+/* 手機 Offcanvas */
+.hahaha-offcanvas { width:280px; }
+.hahaha-mobile-menu {
+    font-size:14px;
+}
+.hahaha-mobile-item {
+    border-bottom:1px solid #eee;
+    padding:0.25rem 0;
+}
+
+/* Level 1 按鈕 */
+.hahaha-mobile-toggle {
+    width:100%;
+    background:none;
+    border:0;
+    text-align:left;
+    padding:0.5rem 0;
+    font-size:15px;
+    position:relative;
+    color: #eee;
+}
+.hahaha-mobile-toggle .arrow {
+    position:absolute;
+    right:0; top:50%;
+    width:10px; height:10px;
+    border-right:2px solid #eee;
+    border-bottom:2px solid #eee;
+    transform:translateY(-50%) rotate(45deg);
+    transition:.2s;
+}
+.hahaha-mobile-toggle[aria-expanded="true"] .arrow {
+    transform:translateY(-50%) rotate(135deg);
+}
+
+/* Level 2 */
+.hahaha-mobile-subitem {
+    padding-left:1rem;
+}
+.hahaha-mobile-toggle2 {
+    width:100%;
+    background:none;
+    border:0;
+    text-align:left;
+    padding:0.35rem 0;
+    font-size:14px;
+    position:relative;
+    color: #eee;
+}
+.hahaha-mobile-toggle2 .arrow {
+    position:absolute;
+    right:0; top:50%;
+    width:10px; height:10px;
+    border-right:2px solid #eee;
+    border-bottom:2px solid #eee;
+    transform:translateY(-50%) rotate(45deg);
+    transition:.2s;
+    color: #eee;
+}
+.hahaha-mobile-toggle2[aria-expanded="true"] .arrow {
+    transform:translateY(-50%) rotate(135deg);
+}
+
+/* Level 3 link */
+.hahaha-mobile-link {
+    display:block;
+    padding:0.3rem 0 0.3rem 1.8rem;
+    font-size:13px;
+    color:#ccc !important;
+    text-decoration:none;
+
+}
+.hahaha-mobile-link:hover { color:#fff !important; }
+
+/* 防止展開後字消失（你的問題） */
+.hahaha-mobile-menu .collapse.show,
+.hahaha-mobile-menu .collapse.show * {
+    color:#fff !important;
+    opacity:1 !important;
+    visibility:visible !important;
+}
+
+.hahaha-footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+.hahaha-footer a:hover {
+    color: #fff;
+}
+
+.hahaha-footer .container {
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
+    max-width: 98%;
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333;
+}
+
+@media (min-width: 768px) {
+    .footer-title {
+        cursor: default;
+        border: none;
+    }
+    .footer-title i {
+        display: none !important;
+    }
+}
+
+.login-card {
+    max-width: 420px;
+    width: 100%;
+    background: #111827;
+    color: #e5e7eb;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
+
+.form-control {
+    background: #020617;
+    border-color: #1f2937;
+    color: #e5e7eb;
+}
+.form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 .25rem rgba(59,130,246,.35);
+}
+
+.form-label {
+    color: #9ca3af;
+}
+.link-muted {
+    color: #9ca3af;
+    text-decoration: none;
+}
+.link-muted:hover {
+    color: #ffffff;
+}
+
+.overview-section {
+    background: #f8f9fa;
+}
+
+.overview-content h2 {
+    font-size: 32px;
+    line-height: 1.4;
+}
+
+.features-list li span {
+    font-size: 17px;
+}
+
+.features-list li span::before {
+    content: "•";
+    color: #0d6efd;
+    margin-right: 8px;
+}
+
+.features-list a span.active {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* 去掉藍色圓點 */
+.features-list {
+    padding-left: 0;
+}
+
+.features-list li {
+    list-style: none;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    color: #ddd;
+    transition: all .25s ease;
+}
+
+/* 滑過特效：向右移動 + 顏色變亮 + 透明度提升 */
+.features-list li:hover {
+    transform: translateX(6px);
+    color: #fff;
+    opacity: 1;
+}
+
+/* 勾勾符號樣式 */
+.features-list li span::before {
+    content: "✓";
+    margin-right: 8px;
+    color: #4dabff;  /* 勾勾顏色 */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* 點我了解更多 */
+.features-list a .active {
+    font-weight: bold;
+}
+
+/* --- Question List 綠色版 --- */
+
+/* ================================
+   淺色模式（預設）
+================================ */
+:root {
+    --qa-bg: #f2f2f2;          /* 整體背景 */
+    --qa-header-bg: #e6e6e6;  /* 標題背景 */
+    --qa-header-hover: #dcdcdc;
+    --qa-body-bg: #fafafa;    /* 內容背景 */
+    --qa-text: #222;          /* 文字深灰 */
+    --qa-badge-bg: #333;      /* Q1 小圓標 */
+    --qa-badge-text: #fff;
+    --qa-border: rgba(0,0,0,0.15);
+}
+
+/* ================================
+   深色模式（黑色風）
+================================ */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --qa-bg: #000;                   /* 背景黑 */
+        --qa-header-bg: #141414;         /* 標題灰黑 */
+        --qa-header-hover: #1f1f1f;      /* hover 更亮 */
+        --qa-body-bg: #0d0d0d;           /* 內容區 */
+        --qa-text: #e4e4e4;              /* 文字亮灰 */
+        --qa-badge-bg: #fff;             /* Q1 亮白 */
+        --qa-badge-text: #000;           /* 黑字 */
+        --qa-border: rgba(255,255,255,0.18);
+    }
+}
+
+/* 套用 */
+.question-list {
+    max-width: 100%;
+    margin: auto auto;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: #6e6e6e;
+    border-radius: 12px;
+}
+
+.question-item {
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.question-header {
+    cursor: pointer;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--qa-header-bg);
+    color: var(--qa-text);
+}
+.question-header:hover {
+    background-color: var(--qa-header-hover);
+}
+
+.question-title {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.question-badge {
+    display: inline-block;
+    min-width: 46px;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background-color: var(--qa-badge);
+    color: #fff;
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+.question-icon {
+    font-size: 0.9rem;
+    margin-left: 10px;
+    transition: transform .2s;
+    color: var(--qa-text);
+}
+.question-item.open .question-icon {
+    transform: rotate(90deg);
+}
+
+.question-body {
+    padding: 14px 16px 14px 16px;
+    display: none;
+    background-color: var(--qa-body-bg);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: var(--qa-text);
+}
+
+.counter-box {
+    background: rgba(255, 255, 255, 0.05);   /* 半透明玻璃感 */
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 16px;
+    text-align: center;
+    backdrop-filter: blur(6px);               /* 霧面玻璃特效 */
+    transition: all .3s ease;
+    color: #fff;                              /* 文字白色 */
+}
+
+/* hover 浮起 + 陰影 + 亮邊框 */
+.counter-box:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, .45);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* 讓數字有一點亮度 */
+.counter-box .counter {
+    color: #f5f5f5;
+    text-shadow: 0 0 8px rgba(255,255,255,0.25);
+}
+
+.resource-card {
+    background: #1e1e2b;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+    max-width: 900px;
+    margin: 0 auto;
+    transition: .35s ease;
+    transform: translateY(0);
+    position: relative;
+}
+
+/* hover 效果 */
+.resource-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+}
+
+/* hover 光暈 */
+.resource-card:hover::before {
+    opacity: 1;
+}
+
+/* 光暈背景 */
+.resource-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: radial-gradient(
+        circle at top left,
+        rgba(210, 255, 210, 0.25),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: .35s ease;
+    pointer-events: none;
+}
+
+
+/* 上方圖片容器（固定高度，你可調） */
+.resource-img {
+    height: 220px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 等比例完整顯示 */
+.resource-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* ⭐⭐ 等比例完整顯示 */
+    transition: transform .35s ease;
+    padding: 10px; /* 避免貼邊，可調整 */
+}
+
+/* hover 放大微效果（可保留）*/
+.resource-card:hover .resource-img img {
+    transform: scale(1.05);
+}
+
+/* 文字 */
+.resource-content {
+    padding: 25px;
+    background: #2d2d3a;
+    color: #cfcfe8;
+}
+
+.resource-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.resource-text {
+    color: #d2d2e1;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* RWD */
+@media (max-width: 768px) {
+    .resource-img img {
+        height: 180px;
+    }
+}
+
+#about-glass {
+    position: relative;
+}
+
+#about-glass .container{
+    max-width: 100% !important;
+}
+
+.glass-box {
+    width: 100%;
+    border-radius: 20px;
+
+    /* ⭐ 重點：半透明紫色玻璃效果 */
+    background: rgba(210, 255, 210, 0.15); /* 紫色透明 */
+    backdrop-filter: blur(2px);  /* 背景模糊 */
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+/* ⭐ 表單輸入框半透明 */
+.glass-input {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.glass-input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.glass-input:focus {
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+}
+
+.about-section {
+    position: relative;
+}
+
+.about-section .container{
+    max-width: 100% !important;
+}
+
+
+
+.plan-item.experience-item {
+
+    border-radius: 0.75rem;
+    border: 1px solid rgba(0,0,0,.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,.04);
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+
+.plan-item.experience-item:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+
+.plan-text {
+    font-size: 16px;
+    width: 100%;
+    background-color: #88888888;
+}
+
+.plan-item {
+    position: relative;
+    padding: 0.25rem 0;
+    border-radius: 4px;
+    cursor: default;
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+
+.plan-item:hover {
+    transform: translateX(6px);
+    background-color: #c9ffc986;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.plan-num {
+    width: 76px;
+    height: 76px;
+    font-size: 16px;
+  
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.plan-item:hover .plan-num {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 4px rgba(13,253,110,.25); /* Bootstrap primary 色系外框 */
+}
+
+
+.circle-row {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* 基本圓：暗色、深灰描邊 */
+.circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #1b1b1b; 
+    border: 3px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    font-size: 44px;        /* ⭐ icon 大小 */
+    color: #c9ffc9;         /* ⭐ 綠色 icon，一定看得見 */
+    transition: .25s;
+}
+
+/* ICON 顏色修正：亮綠球體時用深色 ICON 才會看見 */
+.circle.active i,
+.circle:hover i {
+    color: #043a29;         /* 深綠 ICON 避免消失 */
+}
+
+/* ⭐ 亮綠球體（和你圖片 identically 一樣風格） */
+.circle.active,
+.circle:hover {
+    background: radial-gradient(circle at 30% 30%, 
+        #c9ffc9, 
+        #d9ffd9, 
+        #c9ffc9
+    );
+    border-color: #c9ffc9;
+    box-shadow: 0 0 25px rgba(210,255,210,0.75);
+    transform: scale(1.07);
+}
+
+
