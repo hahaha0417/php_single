@@ -26,8 +26,8 @@ class application
     public function initial()
     {
         // 必要初始化
-        config_application::instance()->initial();
-        config_database::instance()->initial();
+        config_application::Instance()->initial();
+        config_database::Instance()->initial();
 
         //
         $root = realpath(__DIR__  . "../..");
@@ -67,7 +67,7 @@ class application
     public function initial_web()
     {
         // 網站
-        pdo::instance()->initial();
+        pdo::Instance()->initial();
         return $this;
 
     }

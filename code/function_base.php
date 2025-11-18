@@ -45,7 +45,7 @@ class function_base
 	*/
 	public function Url_Asset($asset)
 	{
-		$config_application = config_application::instance();
+		$config_application = config_application::Instance();
 		
 		if($config_application->debug) 
 		{
@@ -62,7 +62,7 @@ class function_base
 	*/
 	public function Url_Image($image)
 	{
-		$config_application = config_application::instance();
+		$config_application = config_application::Instance();
 		
 		if($config_application->debug) 
 		{
@@ -79,7 +79,7 @@ class function_base
 	*/
 	public function Url_File($file)
 	{
-		$config_application = config_application::instance();
+		$config_application = config_application::Instance();
 		
 		if($config_application->debug) 
 		{
@@ -96,7 +96,7 @@ class function_base
 	*/
 	public function Url_Js($js)
 	{
-		$config_application = config_application::instance();
+		$config_application = config_application::Instance();
 		
 		if($config_application->debug) 
 		{
@@ -113,7 +113,7 @@ class function_base
 	*/
 	public function Url_Css($css)
 	{
-		$config_application = config_application::instance();
+		$config_application = config_application::Instance();
 		
 		if($config_application->debug) 
 		{
@@ -130,7 +130,7 @@ class function_base
 	*/
 	public function Url_Plugin($plugin)
 	{
-		$config_application = config_application::instance();
+		$config_application = config_application::Instance();
 		
 		if($config_application->debug) 
 		{

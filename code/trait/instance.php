@@ -6,7 +6,7 @@ trait instance
 {
     public static $instance = null;
 
-    public static function instance() 
+    public static function Instance() 
     {
         if(self::$instance == null) 
         {
