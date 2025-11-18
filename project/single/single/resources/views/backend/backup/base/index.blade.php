@@ -91,7 +91,7 @@ use hahaha\package\backup\base\define\statement as define_statement;
                 </div>
 
                 <div class="col-6 mt-4" style="height:300px; display:flex; justify-content:center; align-items:center;">
-                    <img src="/image/php.jpg"
+                    <img src="/image/php.png"
                         style="max-width:100%; max-height:100%; object-fit:contain; object-position:center;">
                 </div>
 

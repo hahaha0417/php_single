@@ -19,7 +19,7 @@
             position: absolute;
             width: 40%;     /* 你之前要求的大小 */
             height: auto;     /* 等比例 */
-            
+
             left: 55%;        /* 依需要調整位置 */
             top: 83%;         /* 依需要調整位置 */
 
@@ -30,14 +30,14 @@
     </style>
     <main>
         <section class="bg-gradient-to-br from-indigo-50 to-white dark:from-slate-800 dark:to-slate-900">
-            
+
             <div class="header-wrap">
                 <img src="image/av/圖.png" alt="Header" class="header-img">
 
                 <!-- 疊在上面的圖片 -->
                 <img src="image/hahaha黑金.png" alt="image 4" class="overlay-img">
             </div>
-               
+
             <div class="carousel">
                 <div class="slides">
                     <div class="slide"><img src="image/av/冬月楓.jpg" alt="image 3"></div>
@@ -58,17 +58,17 @@
                 const slides = document.querySelector('.slides');
                 const slideCount = document.querySelectorAll('.slide').length;
                 let index = 0;
-                
+
                 document.getElementById('next').addEventListener('click', () => {
                 index = (index + 1) % slideCount;
                 slides.style.transform = `translateX(-${index * 100}%)`;
                 });
-                
+
                 document.getElementById('prev').addEventListener('click', () => {
                 index = (index - 1 + slideCount) % slideCount;
                 slides.style.transform = `translateX(-${index * 100}%)`;
                 });
-                
+
                 // 自動播放
                 setInterval(() => {
                 index = (index + 1) % slideCount;
@@ -79,11 +79,11 @@
         <section class="overview-section py-5 bg-dark text-light">
             <div class="container">
                 <div class="row align-items-center">
-                    
+
                     <!-- 左圖 -->
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <div class="overview-image">
-                            <img src="image/php.jpg" style="width:100%;height:auto;" class="img-fluid rounded" alt="服務項目">
+                            <img src="image/php.png" style="width:100%;height:auto;" class="img-fluid rounded" alt="服務項目">
                         </div>
                     </div>
 
@@ -204,7 +204,7 @@
 
                 <h3 class="ms-2">Q & A</h3>
 
-        
+
 
             </div>
 
@@ -236,7 +236,7 @@
                 </div>
             </div>
 
-            
+
 
         </div>
 
@@ -244,10 +244,10 @@
 
         <?php \hahaha\view\frontend\component\rect_image_hover::instance()->view(); ?>
 
-        
+
     </main>
 
-    
+
 
     <style>
     * { box-sizing: border-box; }
