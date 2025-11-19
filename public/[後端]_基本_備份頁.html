@@ -165,11 +165,172 @@
 
                         </div>
                     </div>
-                    <select id="category" class="form-control bg-dark text-light border-secondary list" style="overflow-y: auto;" size="10" multiple>
-                                                    <option value="222">222</option>
-                                                    <option value="2222">2222</option>
-                        
-                    </select>
+
+                    <div class="open-select-container">
+
+                        <div class="open-select-options" id="openList">
+                                                            
+                                <div class="open-select-option row"
+                                    data-value="eee"
+                                    data-name="eee"
+                                    data-state="無"
+                                    data-color="#c9c9ff">
+
+                                    <div class="col-6">eee</div>
+                                    <div class="col-1">|</div>
+                                    <div class="col-5" style="color:#c9c9ff;">無</div>
+                                </div>
+                                                            
+                                <div class="open-select-option row"
+                                    data-value="ewewew"
+                                    data-name="ewewew"
+                                    data-state="備份成功"
+                                    data-color="#c9ffc9">
+
+                                    <div class="col-6">ewewew</div>
+                                    <div class="col-1">|</div>
+                                    <div class="col-5" style="color:#c9ffc9;">備份成功</div>
+                                </div>
+                                                            
+                                <div class="open-select-option row"
+                                    data-value="eweweweeee"
+                                    data-name="eweweweeee"
+                                    data-state="備份成功"
+                                    data-color="#c9ffc9">
+
+                                    <div class="col-6">eweweweeee</div>
+                                    <div class="col-1">|</div>
+                                    <div class="col-5" style="color:#c9ffc9;">備份成功</div>
+                                </div>
+                                                            
+                                <div class="open-select-option row"
+                                    data-value="eweweweeee666"
+                                    data-name="eweweweeee666"
+                                    data-state="無"
+                                    data-color="#c9c9ff">
+
+                                    <div class="col-6">eweweweeee666</div>
+                                    <div class="col-1">|</div>
+                                    <div class="col-5" style="color:#c9c9ff;">無</div>
+                                </div>
+                                                            
+                                <div class="open-select-option row"
+                                    data-value="ttt"
+                                    data-name="ttt"
+                                    data-state="無"
+                                    data-color="#c9c9ff">
+
+                                    <div class="col-6">ttt</div>
+                                    <div class="col-1">|</div>
+                                    <div class="col-5" style="color:#c9c9ff;">無</div>
+                                </div>
+                                                            
+                                <div class="open-select-option row"
+                                    data-value="tttrr"
+                                    data-name="tttrr"
+                                    data-state="無"
+                                    data-color="#c9c9ff">
+
+                                    <div class="col-6">tttrr</div>
+                                    <div class="col-1">|</div>
+                                    <div class="col-5" style="color:#c9c9ff;">無</div>
+                                </div>
+                                                    </div>
+
+                        <input type="hidden" id="openSelectValue">
+                    </div>
+
+                    <style>
+                        .open-select-container {
+                            width: 100%;
+                            color: #fff;
+                            font-size: 15px;
+                        }
+
+                        .open-select-title {
+                            padding: 12px;
+                            background: #222;
+                            border: 1px solid #444;
+                            border-radius: 6px;
+                            margin-bottom: 6px;
+                        }
+
+                        .open-select-options {
+                            background: #222;
+                            border: 1px solid #444;
+                            border-radius: 6px;
+
+                            /* ⭐ 你的需求：固定高度 + 捲軸 */
+                            max-height: 220px;
+                            overflow-y: auto;
+                            /* ⭐ 修正水平捲軸 BUG */
+                            min-width: 0;
+
+                            /* 美化捲軸 */
+                            scrollbar-width: thin;
+                            scrollbar-color: #666 #222;
+                        }
+
+                        .open-select-option {
+                            padding: 10px 12px;
+                            border-bottom: 1px solid #333;
+                            cursor: pointer;
+                        }
+
+                        .open-select-option.row {
+                            margin-left: 0 !important;
+                            margin-right: 0 !important;
+                        }
+
+                        .open-select-option:hover {
+                            background: #333;
+                        }
+
+                        /* ⭐選取高亮 */
+                        .open-select-option.selected {
+                            background: #555;
+                            border-left: 4px solid #00ff95;
+                        }
+
+                        .open-select-option:last-child {
+                            border-bottom: none;
+                        }
+
+                        .opt-line1 {
+                            font-size: 15px;
+                            font-weight: 500;
+                        }
+
+                        .opt-line2 {
+                            margin-top: 2px;
+                            font-size: 14px;
+                        }
+
+
+
+                    </style>
+                    <script>
+                        $(".open-select-option").on("click", function () {
+
+                            $(".open-select-option").removeClass("selected");
+                            $(this).addClass("selected");
+
+                            let name = $(this).data("name");
+                            let state = $(this).data("state");
+                            let color = $(this).data("color");
+
+                            $("#selectedText").html(
+                                name + "<br><span style='color:"+color+"'>："+state+"</span>"
+                            );
+
+                            $("#openSelectValue").val($(this).data("value"));
+
+                            $(".name").val($(this).data("value"));
+                        });
+                    </script>
+
+                    
+
                     <div class="row ms-1 mt-3">
                         <button class="btn btn-success col-2 me-1 button_add">
                             <i class="fa-solid fa-circle-plus me-1"></i> 新增
@@ -188,10 +349,10 @@
                 <div class="col-6 ">
                     <label class="form-label mb-3">狀態</label>
                     <textarea class="form-control bg-dark text-light border-secondary mb-3 state" rows="13" readonly>
-名稱：無
-動作：無
-狀態：無
-日期：無
+名稱：ewewew
+動作：備份
+狀態：備份成功
+日期：2025-11-19 14:41:33
 
 錯誤：無
 
@@ -214,8 +375,6 @@
                 <div class="col-6 mt-3">
                     <label class="form-label mb-3">排程</label>
                     <textarea class="form-control bg-dark text-light border-secondary" rows="11" readonly>
-222 備份
-222 還原
 
 
 </textarea>
@@ -257,6 +416,20 @@
         })
 
         $(".button_add").click(function() {
+            if($(".name").val().trim() == "")
+            {
+                Swal.fire({
+                    title: "錯誤",
+                    text: "請輸入名稱",
+                    icon: "error",
+                }).then(() => {
+                    // console.log("使用者按下 OK");
+                });
+                return;
+            }
+
+
+
             $.ajax({
                 type: "POST", //傳送方式
                 url: "/api/backend/backup/base/add", //傳送目的地
@@ -302,13 +475,44 @@
         });
 
         $(".button_update").click(function() {
+
+            if($(".name").val().trim() == "")
+            {
+                Swal.fire({
+                    title: "錯誤",
+                    text: "請輸入名稱",
+                    icon: "error",
+                }).then(() => {
+                    // console.log("使用者按下 OK");
+                });
+                return;
+            }
+
+            let selected_val = $(".list option:selected").val() || "";
+
+            if (selected_val.trim() === "")
+            {
+                Swal.fire({
+                    title: "錯誤",
+                    text: "請選取項目",
+                    icon: "error",
+                }).then(() => {
+                    // console.log("使用者按下 OK");
+                });
+                return;
+            }
+
+
             $.ajax({
                 type: "POST", //傳送方式
                 url: "/api/backend/backup/base/update", //傳送目的地
                 dataType: "json", //資料格式
                 data: { //傳送資料
-                    name: $(".list option:selected").val(),
+                    name: $("#openSelectValue").val(),
+                    // name: $(".list option:selected").val(),
                     name_new: $(".name").val(),
+
+
                 },
                 success: function(data) {
                     if (data["result"] == "success")
@@ -346,6 +550,18 @@
         });
 
         $(".button_delete").click(function() {
+            if($(".name").val().trim() == "")
+            {
+                Swal.fire({
+                    title: "錯誤",
+                    text: "請輸入名稱",
+                    icon: "error",
+                }).then(() => {
+                    // console.log("使用者按下 OK");
+                });
+                return;
+            }
+
             $name = $(".name").val();
             Swal.fire({
                 title: `確定要刪除${$name}嗎？`,
@@ -408,6 +624,18 @@
 
 
         $(".button_backup").click(function() {
+            if($(".name").val().trim() == "")
+            {
+                Swal.fire({
+                    title: "錯誤",
+                    text: "請輸入名稱",
+                    icon: "error",
+                }).then(() => {
+                    // console.log("使用者按下 OK");
+                });
+                return;
+            }
+
             $.ajax({
                 type: "POST", //傳送方式
                 url: "/api/backend/backup/base/backup", //傳送目的地
@@ -450,7 +678,34 @@
             });
         });
 
-        $(".button_restore").click(function() {
+        $(".button_restore").click(function()
+        {
+            if($(".name").val().trim() == "")
+            {
+                Swal.fire({
+                    title: "錯誤",
+                    text: "請輸入名稱",
+                    icon: "error",
+                }).then(() => {
+                    // console.log("使用者按下 OK");
+                });
+                return;
+            }
+
+            let selected_val = $(".list option:selected").val() || "";
+
+            if (selected_val.trim() === "")
+            {
+                Swal.fire({
+                    title: "錯誤",
+                    text: "請選取項目",
+                    icon: "error",
+                }).then(() => {
+                    // console.log("使用者按下 OK");
+                });
+                return;
+            }
+
             $.ajax({
                 type: "POST", //傳送方式
                 url: "/api/backend/backup/base/restore", //傳送目的地
@@ -493,15 +748,15 @@
             });
         });
 
-        $(".list").change(function() {
-            $(".name").val($(".list option:selected").val());
+        // $(".list").change(function() {
+        //     $(".name").val($(".list option:selected").val());
 
 
 
 
 
 
-        });
+        // });
     </script>
 
         <footer class="bg-dark text-light py-3 fixed-bottom">

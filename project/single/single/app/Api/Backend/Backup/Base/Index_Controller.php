@@ -24,7 +24,7 @@ class Index_Controller extends \hahaha\base_controller_api
 
         $name = $post[define_key::NAME];
 
-        $dir_backup = public_path(define_env::BACKUP_DIR); // 存到 public
+        $dir_backup = FILE_PUBLIC . "/backup/base"; // 存到 public
 
         if(!is_dir($dir_backup))
         {
@@ -144,7 +144,7 @@ class Index_Controller extends \hahaha\base_controller_api
                 $file_name_backup_state,
                 json_encode(
                     [
-                        define_key::NAME => "無",
+                        define_key::NAME => $name,
                         define_key::ACTION => "無",
                         define_key::STATE => "無",
                         // define_key::DATE => Carbon::now()->format('Y-m-d H:i:s'),
@@ -208,7 +208,7 @@ class Index_Controller extends \hahaha\base_controller_api
         $name = $post[define_key::NAME];
         $name_new = $post[define_statement::NAME_NEW];
 
-        $dir_backup = public_path(define_env::BACKUP_DIR); // 存到 public
+        $dir_backup = FILE_PUBLIC . "/backup/base"; // 存到 public
 
         if(!is_dir($dir_backup))
         {
@@ -318,6 +318,19 @@ class Index_Controller extends \hahaha\base_controller_api
         }
 
         // 不在queue
+        $temp = json_decode(file_get_contents($dir_backup . "/backup/{$name}/state.json"), true);
+        $temp[define_key::NAME] = $name_new;
+
+        file_put_contents(
+            $dir_backup . "/backup/{$name}/state.json",
+            json_encode(
+                $temp,
+                JSON_PRETTY_PRINT |
+                JSON_UNESCAPED_UNICODE |
+                JSON_UNESCAPED_SLASHES
+            )
+
+        );
 
         // 檔案搬移
         rename($dir_backup . "/backup/{$name}",
@@ -458,7 +471,7 @@ class Index_Controller extends \hahaha\base_controller_api
 
         $name = $post[define_key::NAME];
 
-        $dir_backup = public_path(define_env::BACKUP_DIR); // 存到 public
+        $dir_backup = FILE_PUBLIC . "/backup/base"; // 存到 public
 
         if(!is_dir($dir_backup))
         {
@@ -655,7 +668,7 @@ class Index_Controller extends \hahaha\base_controller_api
 
         $name = $post[define_key::NAME];
 
-        $dir_backup = public_path(define_env::BACKUP_DIR); // 存到 public
+        $dir_backup = FILE_PUBLIC . "/backup/base"; // 存到 public
 
         if(!is_dir($dir_backup))
         {
@@ -719,12 +732,19 @@ class Index_Controller extends \hahaha\base_controller_api
         $queue = json_decode(file_get_contents($file_name_backup_queue), true);
 
 
-
-
-        $queue[] = [
+        $file_name_backup = str_replace("\\", "/", $dir_backup) . '/backup/' . $name . "/" . "backup" . '.sql';
+        $job = [
             define_key::NAME => $name,
             define_key::ACTION => define_key::BACKUP,
+            define_key::ITEMS => [
+                str_replace("\\", "/", FILE_PUBLIC . "/asset"),
+                str_replace("\\", "/", FILE_PUBLIC . "/image"),
+                str_replace("\\", "/", "D:/desktop/hahahalib"),
+                str_replace("\\", "/", realpath($dir_backup_backup) . "/{$name}/backup.sql"),
+            ],
         ];
+
+        $queue[] = $job;
 
         file_put_contents(
             $file_name_backup_queue,
@@ -737,7 +757,7 @@ class Index_Controller extends \hahaha\base_controller_api
 
         );
 
-
+        \hahaha\package\backup\base\job\backup::dispatch($job);
 
         $lock->Un_Lock();
         // ---------------------------------------------------------
@@ -872,7 +892,7 @@ class Index_Controller extends \hahaha\base_controller_api
 
         $name = $post[define_key::NAME];
 
-        $dir_backup = public_path(define_env::BACKUP_DIR); // 存到 public
+        $dir_backup = FILE_PUBLIC . "/backup/base"; // 存到 public
 
         if(!is_dir($dir_backup))
         {
@@ -936,12 +956,18 @@ class Index_Controller extends \hahaha\base_controller_api
         $queue = json_decode(file_get_contents($file_name_backup_queue), true);
 
 
-
-
-        $queue[] = [
+        $job = [
             define_key::NAME => $name,
             define_key::ACTION => define_key::RESTORE,
+            define_key::ITEMS => [
+                "asset" => str_replace("\\", "/", FILE_PUBLIC . "/asset"),
+                "image" => str_replace("\\", "/", FILE_PUBLIC . "/image"),
+                "hahahalib" => str_replace("\\", "/", "D:/desktop/hahahalib"),
+                "backup.sql" => str_replace("\\", "/", realpath($dir_backup_backup) . "/{$name}/backup.sql"),
+            ],
         ];
+
+        $queue[] = $job;
 
         file_put_contents(
             $file_name_backup_queue,
@@ -954,7 +980,7 @@ class Index_Controller extends \hahaha\base_controller_api
 
         );
 
-
+        \hahaha\package\backup\base\job\restore::dispatch($job);
 
         $lock->Un_Lock();
         // ---------------------------------------------------------

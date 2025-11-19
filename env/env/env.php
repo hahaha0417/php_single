@@ -32,7 +32,11 @@ class env
     const DATABASE_PASSWORD = "hahaha";
     const DATABASE_CHARSET = "utf8mb4";
     // --------------------------------------------------- 
+    const DATABASE_NAME_BACKUP_TW = "table_tw";
+    const DATABASE_NAME_BACKUP_TW_TEMP = "table_tw_temp";
 
+    // --------------------------------------------------- 
+    // --------------------------------------------------- 
     // --------------------------------------------------- 
     // 主要
     // --------------------------------------------------- 
@@ -51,9 +55,12 @@ class env
     const PAGINATION_COUNT = 10;
 
     // --------------------------------------------------- 
-
+    const ROOT_SINGLE = "D:/web/web/hahaha_single/public";
     // --------------------------------------------------- 
-
+    const EXE_MYSQLDUMP = "D:/web/xampp/mysql/bin/mysqldump.exe";
+    const EXE_MYSQL = "D:/web/xampp/mysql/bin/mysql.exe";
+    const ARTISAN_SINGLE = "D:/web/web/hahaha_single/project/single/single/artisan";
+    const EXE_7_ZIP = "C:/Program Files/7-Zip/7z.exe";
     // --------------------------------------------------- 
 
     // --------------------------------------------------- 

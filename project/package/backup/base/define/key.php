@@ -29,6 +29,7 @@ class key
     const INFORMATION = "information";
     const BACKUP = "backup";
     const RESTORE = "restore";
+    const ITEMS = "items";
 }
 
 
