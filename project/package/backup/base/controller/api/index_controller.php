@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Api\Backend\Backup\Base;
+namespace hahaha\package\backup\base\controller\api;
 
 use hahaha\package\backup\base\define\key as define_key;
 use hahaha\package\backup\base\define\statement as define_statement;
@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 use Carbon\Carbon;
 
-class Index_Controller extends \hahaha\base_controller_api
+class index_controller extends \hahaha\base_controller_api
 {
     public function Add(Request $request)
     {

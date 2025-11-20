@@ -12,11 +12,7 @@ Route::prefix('backend/backup/base')
     ->middleware([
         // '',
     ])->group(function () {
-    Route::post('add', [Api_Backend_Backup_Base_Index_Controller::class, "Add"]);
-    Route::post('update', [Api_Backend_Backup_Base_Index_Controller::class, "Update"]);
-    Route::post('delete', [Api_Backend_Backup_Base_Index_Controller::class, "Delete"]);
-    Route::post('backup', [Api_Backend_Backup_Base_Index_Controller::class, "Backup"]);
-    Route::post('restore', [Api_Backend_Backup_Base_Index_Controller::class, "Restore"]);
+    \hahaha\package\backup\base\router\api\router::Instance()->Backup();
 
     // -----------------------------------------------------
 

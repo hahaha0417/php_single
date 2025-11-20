@@ -6,7 +6,7 @@ use hahaha\package\backup\base\define\statement as define_statement;
 
 @endphp
 
-@extends('backend.layout')
+@extends('package::view.layout')
 
 
 @section('content')

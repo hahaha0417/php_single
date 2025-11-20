@@ -1,17 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Backup\Base;
+namespace hahaha\package\backup\base\controller\web;
 
 use hahaha\package\backup\base\define\key as define_key;
 use hahaha\package\backup\base\define\statement as define_statement;
 use hahaha\package\backup\base\env\env as define_env;
 use hahaha\package\backup\base\config\backup as config_backup;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\View;
 
-class Index_Controller extends \hahaha\base_ontroller
+class index_controller extends \hahaha\base_ontroller
 {
+
+
     public function Index()
     {
+        
+
         $parameter = \hahaha\parameter::instance();
         $config_backup = config_backup::Instance()->Initial();
 
@@ -152,9 +157,9 @@ class Index_Controller extends \hahaha\base_ontroller
         $parameter->queue = &$queue;
 
 
-
+        
         $file_name = public_path("../../../../public/[後端]_基本_備份頁.html"); // 存到 public
-        $view = view('backend.backup.base.index', [
+        $view = view()->file(__DIR__ . "/../../view/index.blade.php", [
             'parameter' => $parameter,
         ])->render();
 

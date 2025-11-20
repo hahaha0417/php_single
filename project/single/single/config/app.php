@@ -194,7 +194,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        // -------------------------------------------------------
+        // package
+        // -------------------------------------------------------
+        hahaha\package\view_provider::class,
+        // -------------------------------------------------------
     ],
 
     /*
