@@ -1,8 +1,9 @@
 # single
 single worker
 
-已有功能
-1. backup base
+已有功能 :
+1. 前端 : 介紹
+2. 後端 : backup base
 
 方針 : 
 1. 上班用
@@ -11,7 +12,9 @@ single worker
 4. php獨有，還是使用單例
 5. 降低library的各方面製作
 
-
+開啟worker : \
+cd project/single/single \
+php artisan queue:work --queue=default
 
 
 
